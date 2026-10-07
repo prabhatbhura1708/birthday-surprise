@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#08090d">
+  <title>For Akanksha — A Birthday Memory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="orb orb-a"></div><div class="orb orb-b"></div>
+  <main id="experience" aria-live="polite">
+    <section class="screen active" data-step="0">
+      <div class="eyebrow">A little something for you</div>
+      <h1>Hey,<br><em>Akanksha.</em></h1>
+      <p class="lead">Before you go any further…<br>give me a few minutes of your birthday.</p>
+      <button class="primary next">Open the surprise <span>→</span></button>
+      <p class="hint">Best experienced with sound on.</p>
+    </section>
+
+    <section class="screen" data-step="1">
+      <div class="eyebrow">There are people…</div>
+      <h2>who enter our lives<br><em>quietly.</em></h2>
+      <p>And then, somehow, a few moments with them stay around much longer than expected.</p>
+      <button class="primary next">Keep going <span>→</span></button>
+    </section>
+
+    <section class="screen" data-step="2">
+      <div class="eyebrow">Some memories fade.</div>
+      <h2>Some become<br><em>unforgettable.</em></h2>
+      <p>Not because everything was perfect. Not because every day was extraordinary. Just because the person made the moments matter.</p>
+      <button class="primary next">One more thing <span>→</span></button>
+    </section>
+
+    <section class="screen" data-step="3">
+      <div class="eyebrow">And today is about you</div>
+      <div class="cake">🎂</div>
+      <h2>Happy Birthday,<br><em>Akanksha Dewangan.</em></h2>
+      <p>Today deserves more than a simple “Happy Birthday.” So I made you something instead.</p>
+      <button class="primary next">Read this →</button>
+    </section>
+
+    <section class="screen letter" data-step="4">
+      <div class="eyebrow">A few words</div>
+      <h2>For someone<br><em>worth remembering.</em></h2>
+      <div class="letter-card">
+        <p>Akanksha,</p>
+        <p>Life gives us a lot of people to meet, but only a few leave behind a feeling that is difficult to explain and even harder to forget.</p>
+        <p>Whatever the years bring, I hope you always remember that you have been a genuinely beautiful part of someone's story.</p>
+        <p>So on your birthday, I just want to wish you more reasons to smile, more moments that feel effortless, and a life filled with people who value you exactly as you are.</p>
+        <p class="signature">Here’s to another year of memories. ✨</p>
+      </div>
+      <button class="primary next">There's more →</button>
+    </section>
+
+    <section class="screen" data-step="5">
+      <div class="eyebrow">No photos needed.</div>
+      <h2>Because the best memories<br><em>aren't always pictures.</em></h2>
+      <div class="memory-grid">
+        <div><span>01</span><strong>The laughs</strong><small>the ones that came out of nowhere</small></div>
+        <div><span>02</span><strong>The conversations</strong><small>the ones that somehow lasted forever</small></div>
+        <div><span>03</span><strong>The little things</strong><small>the moments nobody else would understand</small></div>
+        <div><span>04</span><strong>The memory</strong><small>the one that simply stayed</small></div>
+      </div>
+      <button class="primary next">The last page →</button>
+    </section>
+
+    <section class="screen final" data-step="6">
+      <div class="eyebrow">This is your reminder</div>
+      <div class="sparkle">✦</div>
+      <h1>Make this year<br><em>unforgettable.</em></h1>
+      <p class="lead">Happy Birthday, Akanksha. 🎉</p>
+      <p class="closing">May the coming year give you stories worth telling, people worth keeping, and memories you never want to forget.</p>
+      <button class="primary replay">Read it again ↺</button>
+      <p class="credit">Made with a little thought, just for you.</p>
+    </section>
+  </main>
+
+  <nav class="controls">
+    <button id="back" aria-label="Previous page">←</button>
+    <div class="progress"><span id="progress"></span></div>
+    <button id="nextNav" aria-label="Next page">→</button>
+  </nav>
+
+  <div class="music">
+    <button id="musicBtn" aria-label="Open music">♫</button>
+    <span id="musicText">Music</span>
+  </div>
+
+  <!-- YouTube's player is loaded only after the visitor starts the experience. -->
+  <div id="player" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
