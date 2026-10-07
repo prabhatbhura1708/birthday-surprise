@@ -7,6 +7,12 @@ let isTransitioning = false;
 let isNextLocked = false;
 let phase2Timeout;
 
+function trackEvent(eventName, params) {
+    if (typeof gtag === 'function') {
+        gtag('event', eventName, params || {});
+    }
+}
+
 function createParticles() {
     const container = document.getElementById('particles');
     for (let i = 0; i < 25; i++) {
@@ -67,8 +73,10 @@ function toggleMusic() {
     if (!player) return;
     if (isPlaying) {
         player.pauseVideo();
+        trackEvent('toggle_music', { action: 'pause' });
     } else {
         player.playVideo();
+        trackEvent('toggle_music', { action: 'play' });
     }
 }
 
@@ -105,6 +113,8 @@ function goToScene(index) {
     
     isTransitioning = true;
     clearTimeout(phase2Timeout);
+    
+    trackEvent('view_scene', { scene_index: index });
     
     // Lock next button if entering scene 5 (Memory Fragments)
     isNextLocked = (index === 5);
@@ -169,6 +179,7 @@ function goToScene(index) {
 }
 
 document.getElementById('begin-btn').addEventListener('click', () => {
+    trackEvent('begin_experience');
     initPlayer();
     goToScene(1);
 });
