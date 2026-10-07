@@ -1,98 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#08090d">
-  <title>For Akanksha — A Birthday Memory</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>A Memorable Person</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="grain"></div>
-  <div class="orb orb-a"></div><div class="orb orb-b"></div>
-  <main id="experience" aria-live="polite">
-    <section class="screen active" data-step="0">
-      <div class="eyebrow">A little something for you</div>
-      <h1>Hey,<br><em>Akanksha.</em></h1>
-      <p class="lead">Before you go any further…<br>give me a few minutes of your birthday.</p>
-      <button class="primary next">Open the surprise <span>→</span></button>
-      <p class="hint">Best experienced with sound on.</p>
-    </section>
+    <div id="ambient-background">
+        <div class="light-layer base-gradient"></div>
+        <div class="light-orb orb-indigo"></div>
+        <div class="light-orb orb-plum"></div>
+        <div class="light-orb orb-amber"></div>
+        <div class="particles" id="particles"></div>
+        <div class="grain-overlay"></div>
+    </div>
 
-    <section class="screen" data-step="1">
-      <div class="eyebrow">There are people…</div>
-      <h2>who enter our lives<br><em>quietly.</em></h2>
-      <p>And then, somehow, a few moments with them stay around much longer than expected.</p>
-      <button class="primary next">Keep going <span>→</span></button>
-    </section>
+    <!-- YouTube IFrame API -->
+    <div id="player" style="display: none;"></div>
 
-    <section class="screen" data-step="2">
-      <div class="eyebrow">Some memories fade.</div>
-      <h2>Some become<br><em>unforgettable.</em></h2>
-      <p>Not because everything was perfect. Not because every day was extraordinary. Just because the person made the moments matter.</p>
-      <button class="primary next">One more thing <span>→</span></button>
-    </section>
+    <header class="top-bar">
+        <div class="music-control hidden" id="music-control" title="Toggle Music">
+            <span class="music-bars">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </header>
 
-    <section class="screen" data-step="3">
-      <div class="eyebrow">And today is about you</div>
-      <div class="cake">🎂</div>
-      <h2>Happy Birthday,<br><em>Akanksha Dewangan.</em></h2>
-      <p>Today deserves more than a simple “Happy Birthday.” So I made you something instead.</p>
-      <button class="primary next">Read this →</button>
-    </section>
+    <main id="scene-container">
+        <!-- Scene 1: Intro -->
+        <div class="scene active" id="scene-0">
+            <div class="scene-scroll-content centered">
+                <p class="fade-in-text d-1 sans small-text">A little something for you.</p>
+                <h1 class="fade-in-text d-2 serif large-title spacing-bottom">Akanksha.</h1>
+                <p class="fade-in-text d-3 sans">Take a moment.</p>
+                <p class="fade-in-text d-4 sans">There's no rush.</p>
+                <button class="action-btn fade-in-text d-5" id="begin-btn">Begin &rarr;</button>
+            </div>
+        </div>
 
-    <section class="screen letter" data-step="4">
-      <div class="eyebrow">A few words</div>
-      <h2>For someone<br><em>worth remembering.</em></h2>
-      <div class="letter-card">
-        <p>Akanksha,</p>
-        <p>Life gives us a lot of people to meet, but only a few leave behind a feeling that is difficult to explain and even harder to forget.</p>
-        <p>Whatever the years bring, I hope you always remember that you have been a genuinely beautiful part of someone's story.</p>
-        <p>So on your birthday, I just want to wish you more reasons to smile, more moments that feel effortless, and a life filled with people who value you exactly as you are.</p>
-        <p class="signature">Here’s to another year of memories. ✨</p>
-      </div>
-      <button class="primary next">There's more →</button>
-    </section>
+        <!-- Scene 2: Memory -->
+        <div class="scene" id="scene-1">
+            <div class="scene-scroll-content left-align">
+                <h1 class="serif title spacing-bottom">Some people<br>are easy to remember.</h1>
+                <p class="sans fade-in-group d-1">But every once in a while,<br>there's someone whose memory<br>feels a little different.</p>
+                <p class="sans fade-in-group d-2">Not loud.<br>Not complicated.<br>Just... lasting.</p>
+            </div>
+        </div>
 
-    <section class="screen" data-step="5">
-      <div class="eyebrow">No photos needed.</div>
-      <h2>Because the best memories<br><em>aren't always pictures.</em></h2>
-      <div class="memory-grid">
-        <div><span>01</span><strong>The laughs</strong><small>the ones that came out of nowhere</small></div>
-        <div><span>02</span><strong>The conversations</strong><small>the ones that somehow lasted forever</small></div>
-        <div><span>03</span><strong>The little things</strong><small>the moments nobody else would understand</small></div>
-        <div><span>04</span><strong>The memory</strong><small>the one that simply stayed</small></div>
-      </div>
-      <button class="primary next">The last page →</button>
-    </section>
+        <!-- Scene 3: Time -->
+        <div class="scene" id="scene-2">
+            <div class="scene-scroll-content centered">
+                <h1 class="serif title spacing-bottom">Years can change<br>a lot of things.</h1>
+                <p class="sans small-text d-1">Places change.</p>
+                <p class="sans small-text d-1">Days change.</p>
+                <p class="sans small-text d-1">People grow.</p>
+                <p class="sans small-text d-1 spacing-bottom">Life moves forward.</p>
+                
+                <p class="sans fade-in-group d-2 spacing-bottom">But some memories<br>quietly keep their place.</p>
+                <p class="sans fade-in-group d-3">And some people remain<br>a little more special<br>than they know.</p>
+            </div>
+        </div>
 
-    <section class="screen final" data-step="6">
-      <div class="eyebrow">This is your reminder</div>
-      <div class="sparkle">✦</div>
-      <h1>Make this year<br><em>unforgettable.</em></h1>
-      <p class="lead">Happy Birthday, Akanksha. 🎉</p>
-      <p class="closing">May the coming year give you stories worth telling, people worth keeping, and memories you never want to forget.</p>
-      <button class="primary replay">Read it again ↺</button>
-      <p class="credit">Made with a little thought, just for you.</p>
-    </section>
-  </main>
+        <!-- Scene 4: Akanksha -->
+        <div class="scene" id="scene-3">
+            <div class="scene-scroll-content centered name-focus">
+                <h1 class="serif large-title spacing-bottom">Akanksha.</h1>
+                <p class="sans fade-in-group d-1 spacing-bottom">If I had to describe you<br>in just a few words...</p>
+                <p class="serif medium-title fade-in-group d-2 text-champagne spacing-bottom">A memorable person.</p>
+                <p class="sans fade-in-group d-3">Someone whose presence<br>left behind something<br>worth remembering.</p>
+            </div>
+        </div>
 
-  <nav class="controls">
-    <button id="back" aria-label="Previous page">←</button>
-    <div class="progress"><span id="progress"></span></div>
-    <button id="nextNav" aria-label="Next page">→</button>
-  </nav>
+        <!-- Scene 5: Letter -->
+        <div class="scene" id="scene-4">
+            <div class="scene-scroll-content letter-layout">
+                <p class="sans">Akanksha,</p>
+                <p class="sans">Some people become part of our memories without ever realizing how much they matter.</p>
+                <p class="sans">And sometimes, when you look back, you realize that certain moments still carry a warmth of their own.</p>
+                <p class="sans">I hope you know that you are one of those rare people who deserve to be remembered with a smile.</p>
+                <p class="sans">Not because of one particular moment.</p>
+                <p class="sans">But because of everything that made those moments what they were.</p>
+                <p class="sans">On your birthday, I just wanted to say this:</p>
+                <p class="sans">I hope life is kind to you.<br>I hope you keep finding reasons to smile.<br>I hope the years ahead bring you the kind of happiness you truly deserve.</p>
+                <p class="sans">And I hope, somewhere along the way, you never forget you are special.</p>
+                <p class="serif medium-title text-champagne spacing-top fade-in-group d-2">Happy Birthday, Akanksha.</p>
+            </div>
+        </div>
 
-  <div class="music">
-    <button id="musicBtn" aria-label="Open music">♫</button>
-    <span id="musicText">Music</span>
-  </div>
+        <!-- Scene 6: Memory Fragments -->
+        <div class="scene" id="scene-5">
+            <div class="scene-scroll-content fragments-container">
+                <div class="memory-card card-1"><p class="serif" data-phase1="the unexpected laughs" data-phase2="the effortless conversations">the unexpected laughs</p></div>
+                <div class="memory-card card-2"><p class="serif" data-phase1="the conversations" data-phase2="the comfortable silences">the conversations</p></div>
+                <div class="memory-card card-3"><p class="serif" data-phase1="the little things" data-phase2="the things that needed no explanation">the little things</p></div>
+                <div class="memory-card card-4"><p class="serif" data-phase1="the moments that stayed" data-phase2="the moments that felt suspended in time">the moments that stayed</p></div>
+                <div class="memory-card card-5"><p class="serif" data-phase1="the memories that still feel warm" data-phase2="the chapters that shaped the story">the memories that still feel warm</p></div>
+                <div class="memory-card card-6"><p class="serif" data-phase1="the people who leave a mark" data-phase2="the people you remember with a smile">the people who leave a mark</p></div>
+            </div>
+        </div>
 
-  <!-- YouTube's player is loaded only after the visitor starts the experience. -->
-  <div id="player" aria-hidden="true"></div>
-  <script src="script.js"></script>
+        <!-- Scene 7: Unsaid -->
+        <div class="scene" id="scene-6">
+            <div class="scene-scroll-content centered">
+                <h1 class="serif title spacing-bottom">Some things don't need<br>to be said out loud.</h1>
+                <p class="sans fade-in-group d-1">Some people remain important<br>without needing a reason.</p>
+                <p class="sans fade-in-group d-2 spacing-top">Some memories stay warm<br>even after a lot of time.</p>
+                <p class="sans fade-in-group d-3 spacing-top text-champagne">And sometimes,<br>you simply feel grateful<br>that someone was once,<br>and perhaps still is,<br>a beautiful part of your story.</p>
+            </div>
+        </div>
+
+        <!-- Scene 8: Birthday Reveal -->
+        <div class="scene" id="scene-7">
+            <div class="scene-scroll-content centered amber-atmosphere">
+                <p class="sans small-text text-champagne spacing-bottom">Today isn't about the past.</p>
+                <h1 class="serif title fade-in-group d-1">It's about you.</h1>
+                <p class="sans fade-in-group d-2">Your day.<br>Your year.<br>Your next chapter.</p>
+                
+                <div class="abstract-light fade-in-group d-3"></div>
+                
+                <h1 class="serif large-title text-amber fade-in-group d-4 spacing-top">Happy Birthday,<br>Akanksha.</h1>
+            </div>
+        </div>
+
+        <!-- Scene 9: Final -->
+        <div class="scene" id="scene-8">
+            <div class="scene-scroll-content centered final-layout">
+                <h1 class="serif large-title d-1" style="font-style: italic;">Some people<br>become memories.</h1>
+                <h1 class="serif large-title fade-in-group d-2" style="font-style: italic;">Some memories<br>become unforgettable.</h1>
+                <h1 class="serif large-title fade-in-group d-3 text-champagne" style="font-style: italic;">And some people...</h1>
+                <h1 class="serif large-title fade-in-group d-4 text-amber" style="font-style: italic;">...remain both.</h1>
+                
+                <div class="final-space"></div>
+                
+                <p class="script-font fade-in-group d-5" style="font-size: clamp(2.8rem, 7vw, 4.5rem); color: var(--text-champagne);">Happy Birthday, Akanksha.</p>
+                <p class="sans small-text text-rose spacing-top fade-in-group d-6">From someone who will always<br>be grateful for the memories.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Navigation Zone -->
+    <nav class="navigation-zone hidden" id="navigation">
+        <button class="nav-btn" id="prev-btn">&larr; Back</button>
+        <button class="nav-btn" id="next-btn">Next &rarr;</button>
+    </nav>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
 </body>
 </html>
